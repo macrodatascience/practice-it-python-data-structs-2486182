@@ -1,12 +1,14 @@
 import string
 from collections import Counter
-
 def count_words(paragraph):
-    paragraph = paragraph.lower()
+    #paragraph = paragraph.lower()
     paragraph = paragraph.translate(str.maketrans('', '', string.punctuation))
-    wordList = paragraph.split()
-    counter = Counter(wordList)
-    return counter
+    print(Counter(paragraph))
+    c = Counter(paragraph.split())
+    print(Counter(paragraph.split()))       # Get counts for each item in the list
+    print(type(Counter(paragraph.split()))) # Collections.Counter datatype
+    print(c.most_common(5))                 # Get the 5 most frequent words using the counter
+    return len(str.split(paragraph))
 
 def main():
     paragraph = """Nadia’s Garden Restaurant is the creation of husband and wife team Nadia and Timothy Arbore. 
